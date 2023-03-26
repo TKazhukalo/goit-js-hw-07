@@ -20,3 +20,12 @@ function createImagesCards(galleryItems) {
     }).join('');
     
 };
+var lightbox = new SimpleLightbox('.gallery a', {
+    captions: true,
+    captionPosition: 'bottom',
+   captionsData: 'alt',
+    captionDelay: 250,
+});
+function onContainerClick() {
+    console.log('click');
+}
