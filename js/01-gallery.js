@@ -36,7 +36,7 @@ function onContainerClick(evt) {
         return;
     }
     const activeEvtUrl = evt.target.dataset.source;
-    console.log(activeEvtUrl);
+   // console.log(activeEvtUrl);
 
     //import * as basicLightbox from 'basiclightbox'
  
