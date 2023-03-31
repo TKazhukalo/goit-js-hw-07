@@ -6,7 +6,8 @@ const imagesContainer = document.querySelector('.gallery');
 //const imagesEl = document.querySelector('.gallery__item');
 const cardsMarkup = createImagesCards(galleryItems);
 
-imagesContainer.insertAdjacentHTML('beforeend', cardsMarkup);
+//imagesContainer.insertAdjacentHTML('beforeend', cardsMarkup);
+imagesContainer.innerHTML=cardsMarkup;
 imagesContainer.addEventListener('click', onContainerClick);
 function createImagesCards(galleryItems) {
     return galleryItems.map(({ preview, original, description }) => {
@@ -49,10 +50,11 @@ function onContainerClick(evt) {
         }    
     );
     instance.show();
-    document.addEventListener('keydown', onEscKey);
+    window.addEventListener('keydown',onEscKey);
     function onEscKey(evt) {
         if (evt.key === 'Escape') {
             instance.close();
+            window.removeEventListener('keydown', onEscKey);
         }
     }
  }
